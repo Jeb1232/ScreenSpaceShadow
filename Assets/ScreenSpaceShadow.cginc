@@ -140,7 +140,7 @@ fixed4 fragBlur(v2f i) :SV_TARGET{
 			accumulator += tex2Dlod(_MainTex, float4(i.uv + uvOffset.xy * float2(j, k),0,0)).r;
 		}
 	}
-	return i.uv.x > 0.5 ? (1 - saturate(accumulator / counter)) : 1;
+	return i.uv.x > 0.0 ? (1 - saturate(accumulator / counter)) : 0;
 }
 
 #endif
