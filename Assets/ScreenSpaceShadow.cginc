@@ -83,7 +83,7 @@ float4 fragDentisyAndOccluder(v2f i) : SV_Target	//we return dentisy in R, dista
 		rayLength
 	);
 
-	return intersectd ? float4(1 , rayLength, 0, 1) : 0;
+	return intersectd ? float4(1 , rayLength, 0, 1) * alphaCalc(hitPixel, hitZ) : 0;
 }
 
 float4 _MainTex_TexelSize;
